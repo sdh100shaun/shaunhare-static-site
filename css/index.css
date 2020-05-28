@@ -11,11 +11,13 @@
 * {
   box-sizing: border-box;
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cabin|Roboto:400,700|Roboto+Condensed:400,700');
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family:  'Cabin', sans-serif;
   color: var(--darkgray);
   background-color: var(--white);
 }
@@ -45,6 +47,13 @@ main :first-child {
 }
 header {
   border-bottom: 1px dashed var(--lightgray);
+  background-color: var(--darkgray);
+  color: var(--white);
+  font-family: 'Roboto Condensed',sans-serif;
+}
+h1.home > a, h1.home > a:visited {
+  color: var(--white);
+  font-size: 2.5em;
 }
 header:after {
   content: "";
@@ -131,17 +140,26 @@ pre {
   list-style: none;
   float: left;
   margin-left: 1em;
+  color: var(--white);
+  margin-top: 1.75em;
 }
 .nav-item {
   display: inline-block;
   margin-right: 1em;
+  color: var(--white);
 }
 .nav-item a[href]:not(:hover) {
   text-decoration: none;
+  color: var(--white);
+}
+.nav-item a[href]:hover {
+  text-decoration: none;
+  color: var(--white);
 }
 .nav-item-active {
   font-weight: 700;
   text-decoration: underline;
+  color: var(--white);
 }
 
 /* Posts list */
