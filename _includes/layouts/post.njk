@@ -7,3 +7,12 @@ templateClass: tmpl-post
 {{ content | safe }}
 
 <p><a href="{{ '/' | url }}">← Home</a></p>
+<hr class="tagrule"/>
+<p> Tagged with : 
+{% for tag in collections.tagList %}
+      
+      {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+      <a href="{{ tagUrl | url }}" class="tag yellow">{{ tag }}</a>
+      
+{% endfor %}
+</p>

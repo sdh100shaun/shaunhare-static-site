@@ -2,4 +2,14 @@
 layout: layouts/base.njk
 templateClass: tmpl-home
 ---
+
+
+{%- if page.fileSlug ==="" -%}
+{% set postslist = collections.posts | head(-1) %}
+
+<h1>{{ postslist[0].data.title | safe }}</h1>
+{{ postslist[0].templateContent | safe }}
+
+<hr />
+{%- endif -%}
 {{ content | safe }}

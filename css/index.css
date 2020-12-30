@@ -287,3 +287,31 @@ main h1, main h2 {
 main a {
   text-decoration: underline;
 }
+.tag {
+  margin: 0 2px;
+  padding: 4px 10px;
+  color: #fff;
+  background: #999;
+  font-size: 80%;
+  font-family: sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  }
+
+.yellow {
+  background-color: goldenrod;
+}
+
+.blue {
+  background-color: royalblue;
+}
+
+.green {
+  background-color: seagreen;
+}
+
+.red {
+  background-color: var(--red);
+  color: var(--white) !important;
+  font-weight: bold !important;
+}
