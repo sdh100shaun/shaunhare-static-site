@@ -8,20 +8,23 @@ tags:
   - MS Teams
 layout: layouts/post.njk
 ---
-So in these times of working from home, I have increasingly been frustrated by the fact my camera angles when using multiple screens are not the best. I am constantly looking on the content of another screen and people then just get to see the side of my head. This was an opportunity therefore to sort out the many cameras I have floating around and follow the advice of Scott Hansellman []
+So in these times of working from home, I have increasingly been frustrated by the fact my camera angles on video calls when using multiple screens are not the best. I am constantly looking on the content of another screen and people then just get to see the side of my head. This was an opportunity therefore to sort out the many cameras I have floating around and follow the advice of [Scott Hansellman's blogpost on OBS ](https://www.hanselman.com/blog/take-remote-workereducator-webcam-video-calls-to-the-next-level-with-obs-ndi-tools-and-elgato-stream-deck).  I installed OBS and set around setting up the required scenes. 
 
 
-## Section Header
+## But it did not work
 
-Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
+Nothing wrong with the instructions provided by Scott the OBS setup went smoothly and I installed the [OBS Virtual camera plugin](https://obsproject.com/forum/resources/obs-virtualcam.539/). but teams coudl not find the camera. Turns out the missing bit was down to the codesigning. So I removed the codesigning signatures for all the releavnt parts.
 
-``` text/2-3
-// this is a command
-function myCommand() {
-	let counter = 0;
-	counter++;
-}
 
-// Test with a line break above this line.
-console.log('Test');
+``` bash/2-3
+sudo codesign --remove-signature "/Applications/Microsoft Teams.app"
+
+sudo codesign --remove-signature "/Applications/Microsoft Teams.app/Contents/Frameworks/Microsoft Teams Helper.app"
+
+sudo codesign --remove-signature "/Applications/Microsoft Teams.app/Contents/Frameworks/Microsoft Teams Helper (GPU).app"
+
+sudo codesign --remove-signature "/Applications/Microsoft Teams.app/Contents/Frameworks/Microsoft Teams Helper (Plugin).app"
+
+sudo codesign --remove-signature "/Applications/Microsoft Teams.app/Contents/Frameworks/Microsoft Teams Helper (Renderer).app"
 ```
+And voila the camera appeared I now have each screen with a camera and a corresponding hotkey in OBS. 
