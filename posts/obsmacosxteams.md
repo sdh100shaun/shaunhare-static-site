@@ -13,7 +13,7 @@ So in these times of working from home, I have increasingly been frustrated by t
 
 ## But it did not work
 
-Nothing wrong with the instructions provided by Scott the OBS setup went smoothly and I installed the [OBS Virtual camera plugin](https://obsproject.com/forum/resources/obs-virtualcam.539/). but teams coudl not find the camera. Turns out the missing bit was down to the codesigning. So I removed the codesigning signatures for all the releavnt parts.
+Nothing wrong with the instructions provided by Scott the OBS setup went smoothly and I installed the [OBS Virtual camera plugin](https://obsproject.com/forum/resources/obs-virtualcam.539/). but teams could not find the camera. Turns out the missing bit was down to the codesigning. So I removed the codesigning signatures for all the releavnt parts.
 
 
 ``` bash/2-3
